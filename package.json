@@ -1,0 +1,17 @@
+{
+  "name": "clippings-service",
+  "version": "1.0.0",
+  "description": "Simple service for parsing Amazon Kindle clippings",
+  "main": "app.js",
+  "scripts": {},
+  "keywords": [
+    "Amazon Kidnle", "Kindle", "Clippings"
+  ],
+  "author": "Andrii Lazurenko (andrey.lazurenko@gmail.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.13.4",
+    "multer": "^1.1.0",
+    "simple-clippings-parser": "^1.1.0"
+  }
+}
