@@ -6,7 +6,7 @@ const app = express();
 const defaultConfig = require('./src/defaultConfig');
 
 function start(cfg) {
-  let config = Object.assign(defaultConfig, cfg);
+  let config = Object.assign({}, defaultConfig, cfg);
 
   app.use('/', clippingsRouter(config));
 
@@ -15,6 +15,4 @@ function start(cfg) {
   });
 }
 
-module.exports = {
-  start: start
-}
+module.exports = { start };
