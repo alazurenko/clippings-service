@@ -2,24 +2,21 @@
 
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
 const fs = require('fs');
-const upload = multer({ dest: 'uploads/' });
 const parseData = require('./parsingService');
+const outputPath = `../uploads/output.txt`;
 
-module.exports = function(config) {
-   router.route(`/${config.api.upload}`)
-    .post(upload.single('file'), (req, res) => {
+function handleFile(req, res, next) {
+  let stream = fs.createWriteStream(outputPath);
+  req.on('data', chunk => stream.write(chunk));
+  req.on('end', next);
+}
 
-      let data = parseData(`${__dirname}/../uploads/${req.file.filename}`).then(data => {
-        res.send(data);
-      });
+module.exports = (config) => {
+  router.route(`/${config.api.upload}`)
+    .post(handleFile, (req, res) => {
+      parseData(outputPath).then(data => res.send(data));
+  });
 
-      fs.unlink(`uploads/${req.file.filename}`, err => {
-        if(err) throw err;
-      });
-
-    })
-
-    return router;
+  return router;
 };

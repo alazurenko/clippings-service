@@ -1,9 +1,9 @@
-# Clippings Service
+# clippings-service
 ### Service that allows you to parse Amazon Kindle clippings.
 
 ### API
-#### POST '/api/upload'
-Default route is `'/api/upload'` takes myClippings.txt and respond with parsed data.
+#### POST `/upload`
+Default route is `/upload` takes myClippings.txt and respond with parsed data in `json`.
 
 ### How to use
 ```javascript
