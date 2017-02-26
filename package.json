@@ -11,7 +11,7 @@
   "keywords": [ "kindle", "book", "quote", "amazon" ],
   "author": "Andrii Lazurenko (andrey.lazurenko@gmail.com)",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "express": "^4.13.4",
     "simple-clippings-parser": "^1.1.0"
   }
