@@ -8,7 +8,12 @@
     "type": "git",
     "url": "https://github.com/alazurenko/clippings-service"
   },
-  "keywords": [ "kindle", "book", "quote", "amazon" ],
+  "keywords": [
+    "kindle",
+    "book",
+    "quote",
+    "amazon"
+  ],
   "author": "Andrii Lazurenko (andrey.lazurenko@gmail.com)",
   "license": "MIT",
   "dependencies": {

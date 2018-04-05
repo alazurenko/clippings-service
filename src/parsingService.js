@@ -1,9 +1,9 @@
 'use strict'
 
-const simpleClipper = require('simple-clippings-parser');
+const { parseFile: parse } = require('simple-clippings-parser');
 
-function parseFile(filePath) {
-  return simpleClipper.parseFile(filePath).then(data => data);
-}
+const parseFile = path =>
+  parse(path)
+    .then(x => x)
 
 module.exports = parseFile;
